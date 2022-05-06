@@ -17,39 +17,7 @@ public class Program {
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
-        System.out.println("=== TESTE 1: seller find by ID ===");
-        Seller seller = sellerDao.findById(3);
-        System.out.println(seller);
 
-        System.out.println("\n=== TESTE 2: seller find by DEPARTMENT ===");
-        Department department = new Department(2, null);
-        List<Seller> list = sellerDao.findByDepartment(department);
-        for (Seller obj : list) {
-            System.out.println(obj);
-        }
-
-        System.out.println("\n=== TESTE 3: seller find ALL ===");
-        list = sellerDao.findAll();
-        for (Seller obj : list) {
-            System.out.println(obj);
-        }
-
-       /*System.out.println("\n=== TESTE 4: seller insert ===");
-        Seller newSeller = new Seller(null, "Adeletar", "thiaguera@gmail.com", new Date(), 4000.00, department);
-        sellerDao.insert(newSeller);
-        System.out.println("Inserted! New id = " + newSeller.getId());*/
-
-        System.out.println("\n=== TESTE 5: seller update ===");
-        seller = sellerDao.findById(1);
-        seller.setName("Sabrina Cavalcante");
-        sellerDao.update(seller);
-        System.out.println("Update completed");
-
-        System.out.println("\n=== TESTE 6: seller delete ====");
-        System.out.println("DIGITE UM CODIGO TESTE: ");
-        int id = sc.nextInt();
-        sellerDao.deleteById(id);
-        System.out.println("DELETED!");
         
 
         sc.close();
